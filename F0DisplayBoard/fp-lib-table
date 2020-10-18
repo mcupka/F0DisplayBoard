@@ -1,0 +1,8 @@
+(fp_lib_table
+  (lib (name LCD_NDH-C0216CZ)(type KiCad)(uri D:/PCBProjects/F0DisplayBoard/Components/DISPLAY_NHD_C0216CZ/LCD_NDH-C0216CZ.pretty)(options "")(descr ""))
+  (lib (name ROTARY_ENC_PEC12R)(type KiCad)(uri D:/PCBProjects/F0DisplayBoard/Components/ROTARY_ENC_PEC12R/ROTARY_ENC_PEC12R.pretty)(options "")(descr ""))
+  (lib (name STM32F051R8T6)(type KiCad)(uri D:/PCBProjects/F0DisplayBoard/Components/STM32F051R8T6)(options "")(descr ""))
+  (lib (name ABLS7M2_16MHz_XTAL)(type KiCad)(uri D:/PCBProjects/F0DisplayBoard/Components/XTAL_16MHZ/ABLS7M2_16MHz_XTAL.pretty)(options "")(descr ""))
+  (lib (name 3V3_Regulator)(type KiCad)(uri D:/PCBProjects/F0DisplayBoard/Components/3V3_Regulator)(options "")(descr ""))
+  (lib (name ft232r)(type KiCad)(uri D:/PCBProjects/F0DisplayBoard/Components/FT232/ft232r.pretty)(options "")(descr ""))
+)

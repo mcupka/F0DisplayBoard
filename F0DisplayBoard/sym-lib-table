@@ -1,0 +1,8 @@
+(sym_lib_table
+  (lib (name STM32F0)(type Legacy)(uri D:/PCBProjects/F0DisplayBoard/Components/STM32F051R8T6/STM32F051R8T6TR.lib)(options "")(descr ""))
+  (lib (name ROTARY_ENC_PEC12R)(type Legacy)(uri D:/PCBProjects/F0DisplayBoard/Components/ROTARY_ENC_PEC12R/ROTARY_ENC_PEC12R.lib)(options "")(descr ""))
+  (lib (name XTAL_16MHZ)(type Legacy)(uri D:/PCBProjects/F0DisplayBoard/Components/XTAL_16MHZ/XTAL_16MHZ.lib)(options "")(descr ""))
+  (lib (name NHD-C0216CZ-FSW-FBW-3V3)(type Legacy)(uri D:/PCBProjects/F0DisplayBoard/Components/DISPLAY_NHD_C0216CZ/NHD-C0216CZ-FSW-FBW-3V3.lib)(options "")(descr ""))
+  (lib (name FT232R)(type Legacy)(uri D:/PCBProjects/F0DisplayBoard/Components/FT232/FT232R.lib)(options "")(descr ""))
+  (lib (name AZ1117EH-3.3TRG1)(type Legacy)(uri D:/PCBProjects/F0DisplayBoard/Components/3V3_Regulator/AZ1117EH-3.3TRG1.lib)(options "")(descr ""))
+)
