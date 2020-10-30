@@ -5,4 +5,6 @@
   (lib (name ABLS7M2_16MHz_XTAL)(type KiCad)(uri D:/PCBProjects/F0DisplayBoard/Components/XTAL_16MHZ/ABLS7M2_16MHz_XTAL.pretty)(options "")(descr ""))
   (lib (name 3V3_Regulator)(type KiCad)(uri D:/PCBProjects/F0DisplayBoard/Components/3V3_Regulator)(options "")(descr ""))
   (lib (name ft232r)(type KiCad)(uri D:/PCBProjects/F0DisplayBoard/Components/FT232/ft232r.pretty)(options "")(descr ""))
+  (lib (name TACTILE_SW)(type KiCad)(uri D:/PCBProjects/F0DisplayBoard/Components/TACTILE_SWITCHES/footprints.pretty)(options "")(descr ""))
+  (lib (name MICROUSB)(type KiCad)(uri D:/PCBProjects/F0DisplayBoard/Components/MICROUSB)(options "")(descr ""))
 )

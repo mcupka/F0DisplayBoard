@@ -5,4 +5,5 @@
   (lib (name NHD-C0216CZ-FSW-FBW-3V3)(type Legacy)(uri D:/PCBProjects/F0DisplayBoard/Components/DISPLAY_NHD_C0216CZ/NHD-C0216CZ-FSW-FBW-3V3.lib)(options "")(descr ""))
   (lib (name FT232R)(type Legacy)(uri D:/PCBProjects/F0DisplayBoard/Components/FT232/FT232R.lib)(options "")(descr ""))
   (lib (name AZ1117EH-3.3TRG1)(type Legacy)(uri D:/PCBProjects/F0DisplayBoard/Components/3V3_Regulator/AZ1117EH-3.3TRG1.lib)(options "")(descr ""))
+  (lib (name TACTILE_SW)(type Legacy)(uri D:/PCBProjects/F0DisplayBoard/Components/TACTILE_SWITCHES/2020-10-25_21-37-02.lib)(options "")(descr ""))
 )

@@ -1,0 +1,35 @@
+EESchema-LIBRARY Version 2.3
+#encoding utf-8
+#(c) SnapEDA 2016 (snapeda.com)
+#This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA) with Design Exception 1.0
+#
+# UJ2-MIBH-4-SMT-TR
+#
+DEF UJ2-MIBH-4-SMT-TR J 0 40 Y Y 1 L N
+F0 "J" -200 421 50 H V L BNN
+F1 "UJ2-MIBH-4-SMT-TR" -200 -501 50 H V L BNN
+F2 "CUIDEVICES_UJ2-MIBH-4-SMT-TR" 0 0 50 H I L BNN
+F3 "Manufacturer Recommendations" 0 0 50 H I L BNN
+F4 "CUI Devices" 0 0 50 H I L BNN
+F5 "2.45mm" 0 0 50 H I L BNN
+F6 "1.01" 0 0 50 H I L BNN
+DRAW
+P 2 0 0 10 -200 400 -200 -400 N
+P 2 0 0 10 -200 -400 200 -400 N
+P 2 0 0 10 200 -400 200 400 N
+P 2 0 0 10 200 400 -200 400 N
+X VCC 1 300 300 100 L 40 40 0 0 W 
+X D- 2 300 200 100 L 40 40 0 0 B 
+X D+ 3 300 100 100 L 40 40 0 0 B 
+X ID 4 300 0 100 L 40 40 0 0 B 
+X GND 5 300 -100 100 L 40 40 0 0 W 
+X SHIELD P5 300 -300 100 L 40 40 0 0 P 
+X SHIELD P6 300 -300 100 L 40 40 0 0 P 
+X SHIELD S1 300 -300 100 L 40 40 0 0 P 
+X SHIELD S2 300 -300 100 L 40 40 0 0 P 
+X SHIELD S3 300 -300 100 L 40 40 0 0 P 
+X SHIELD S4 300 -300 100 L 40 40 0 0 P 
+ENDDRAW
+ENDDEF
+#
+# End Library
