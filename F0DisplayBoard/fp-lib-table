@@ -7,4 +7,5 @@
   (lib (name ft232r)(type KiCad)(uri D:/PCBProjects/F0DisplayBoard/Components/FT232/ft232r.pretty)(options "")(descr ""))
   (lib (name TACTILE_SW)(type KiCad)(uri D:/PCBProjects/F0DisplayBoard/Components/TACTILE_SWITCHES/footprints.pretty)(options "")(descr ""))
   (lib (name MICROUSB)(type KiCad)(uri D:/PCBProjects/F0DisplayBoard/Components/MICROUSB)(options "")(descr ""))
+  (lib (name Sophie)(type KiCad)(uri D:/PCBProjects/F0DisplayBoard/Components/Sophie)(options "")(descr ""))
 )
