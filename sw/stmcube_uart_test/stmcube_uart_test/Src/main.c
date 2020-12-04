@@ -23,6 +23,7 @@
 #include "tim.h"
 #include "usart.h"
 #include "gpio.h"
+#include <string.h>
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -53,10 +54,24 @@
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
 
+void interactive_test_menu(void);
+void led_test(void);
+void encoder_test(void);
+void button_test(void);
+void display_test(void);
+
+
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+
+typedef struct MenuOption {
+	const char * menuText;
+	char selectionChar;
+  void (*function)();
+};
+
 
 /* USER CODE END 0 */
 
@@ -69,7 +84,7 @@ int main(void)
   /* USER CODE BEGIN 1 */
 
   /* USER CODE END 1 */
-  
+
 
   /* MCU Configuration--------------------------------------------------------*/
 
@@ -77,6 +92,8 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
+
+
 
   /* USER CODE END Init */
 
@@ -93,7 +110,9 @@ int main(void)
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
 
-  const char test_message[] = "AHHHHH\n";
+  const char test_message[] = "F0 Display Board by Michael Cupka, Hardware Test Build\r\n";
+
+
 
   /* USER CODE END 2 */
  
@@ -104,7 +123,8 @@ int main(void)
   while (1)
   {
 	  HAL_UART_Transmit(&huart2, (unsigned char *)test_message, sizeof(test_message), HAL_MAX_DELAY);
-	  HAL_Delay(2);
+
+	  interactive_test_menu();
 
     /* USER CODE END WHILE */
 	/* USER CODE BEGIN 3 */
@@ -146,6 +166,84 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
+
+void interactive_test_menu(void) {
+	//print initial menu
+	char userSelection;
+	  struct MenuOption ledTestOption = {
+	    .menuText = "LEDs",
+	    .selectionChar = '1',
+	    .function = &led_test
+	  };
+	  struct MenuOption encoderTestOption = {
+	    .menuText = "Encoder",
+	    .selectionChar = '2',
+	    .function = &encoder_test
+	  };
+
+	struct MenuOption menu[] = {ledTestOption, encoderTestOption};
+ 
+	const char newline[] = "\r\n";
+	const char whitespace[] = "\.\t\t";
+
+	for (int a = 0; a < (sizeof(menu) / sizeof(menu[0])); a++) {
+		//print each menu option
+		HAL_UART_Transmit(&huart2, (unsigned char *)&(menu[a].selectionChar), sizeof(menu[a].selectionChar), HAL_MAX_DELAY);
+		HAL_UART_Transmit(&huart2, (unsigned char *)whitespace, sizeof(whitespace), HAL_MAX_DELAY);
+		HAL_UART_Transmit(&huart2, (unsigned char *)menu[a].menuText, strlen(menu[a].menuText), HAL_MAX_DELAY);
+		HAL_UART_Transmit(&huart2, (unsigned char *)newline, sizeof(newline), HAL_MAX_DELAY);
+	}
+
+	//get input from the user
+	HAL_UART_Receive (&huart2, &userSelection, 1, HAL_MAX_DELAY);
+
+	//go to appropriate test
+	for (int a = 0; a < (sizeof(menu) / sizeof(menu[0])); a++) {
+		if (menu[a].selectionChar == userSelection) menu[a].function();
+	}
+
+	return;
+}
+
+void led_test(void) {
+	char text[] = "YOU ARE TESTING LEDS\r\n\r\n";
+
+	HAL_UART_Transmit(&huart2, (unsigned char *)text, sizeof(text), HAL_MAX_DELAY);
+
+	//enable LED GPIOs and set them into the right modes
+	RCC->AHBENR |= RCC_AHBENR_GPIOCEN;
+	GPIOC->MODER &= ~(0xffff << 8);
+	GPIOC->MODER |= 0x5555 << 8;
+
+	//Turn LEDs on and off for a few seconds:
+	for (int a = 0; a < 5; a++) {
+		HAL_Delay(300);
+		GPIOC->ODR |= 0xff << 4;
+		HAL_Delay(300);
+		GPIOC->ODR &= ~(0xff) << 4;
+	}
+
+	//shift one LED bit around
+	for (int a = 0; a < 10; a++) {
+		HAL_Delay(50);
+		GPIOC->ODR &= ~(0xff) << 4;
+		GPIOC->ODR |= 0x1 << 4;
+		for (int b = 0; b < 8; b++) {
+			HAL_Delay(50);
+			GPIOC->ODR <<= 1;
+		}
+	}
+
+}
+
+void encoder_test(void) {
+	char text[] = "Encoder test:\r\n\r\n";
+
+	HAL_UART_Transmit(&huart2, (unsigned char *)text, sizeof(text), HAL_MAX_DELAY);
+
+
+
+}
 
 /* USER CODE END 4 */
 
